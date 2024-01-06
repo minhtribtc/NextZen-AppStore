@@ -1,4 +1,4 @@
-name: NextZen-Vaultwarden
+name: vaultwarden
 services:
   vaultwarden:
     image: vaultwarden/server:1.30.1
