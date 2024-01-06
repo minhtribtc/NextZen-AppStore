@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: "10380"
+        published: "8680"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -76,4 +76,4 @@ x-casaos:
   title:
     en_us: Vaultwarden
   index: /
-  port_map: "10380"
+  port_map: "8680"
