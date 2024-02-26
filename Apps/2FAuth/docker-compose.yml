@@ -1,28 +1,28 @@
 name: 2fauth
 services:
   2fauth:
-    image: 2fauth/2fauth:4.2.4
+    image: orangehrm/orangehrm:latest
     deploy:
       resources:
         reservations:
           memory: 64M
     network_mode: bridge
     ports:
-      - target: 8000
-        published: "8000"
+      - target: 80
+        published: "3080"
         protocol: tcp
     restart: always
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID
-        target: /2fauth
+        target: /orangehrm
     x-casaos:
       ports:
-        - container: "8000"
+        - container: "80"
           description:
             en_us: ""
       volumes:
-        - container: /2fauth
+        - container: /orangehrm
           description:
             en_us: ""
     container_name: 2fauth
@@ -74,4 +74,4 @@ x-casaos:
   title:
     en_us: 2FAuth
   index: /
-  port_map: "8000"
+  port_map: "3080"
